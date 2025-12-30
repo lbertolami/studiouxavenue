@@ -251,3 +251,185 @@ input:focus, textarea:focus, select:focus {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Mockup Carousel */
+.mockup-carousel {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 2rem 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.mockup-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.mockup-item {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  transition: transform 0.475s cubic-bezier(0.625, 0.05, 0, 1),
+              opacity 0.475s cubic-bezier(0.625, 0.05, 0, 1);
+}
+
+.mockup-item:hover {
+  transform: scale(1.02);
+}
+
+/* Device frames */
+.device-laptop {
+  width: 600px;
+  max-width: 80vw;
+  position: relative;
+}
+
+.device-laptop::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: var(--color-gray-light);
+  border-radius: 50%;
+}
+
+.device-laptop .screen {
+  background: var(--color-charcoal);
+  border-radius: 8px 8px 0 0;
+  padding: 8px;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.device-laptop .screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.device-laptop .base {
+  background: linear-gradient(to bottom, var(--color-gray-light) 0%, #d1d1cf 100%);
+  height: 16px;
+  border-radius: 0 0 8px 8px;
+  position: relative;
+}
+
+.device-laptop .base::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 6px;
+  background: #c5c5c3;
+  border-radius: 3px;
+}
+
+.device-phone {
+  width: 280px;
+  max-width: 60vw;
+  position: relative;
+}
+
+.device-phone .frame {
+  background: var(--color-charcoal);
+  border-radius: 32px;
+  padding: 12px;
+  position: relative;
+}
+
+.device-phone .notch {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 24px;
+  background: var(--color-charcoal);
+  border-radius: 0 0 16px 16px;
+  z-index: 10;
+}
+
+.device-phone .screen {
+  background: white;
+  border-radius: 24px;
+  aspect-ratio: 9 / 19.5;
+  overflow: hidden;
+}
+
+.device-phone .screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Carousel navigation buttons */
+.carousel-nav {
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--color-charcoal);
+  background: var(--color-cream);
+  color: var(--color-charcoal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.625, 0.05, 0, 1);
+}
+
+.carousel-nav:hover {
+  background: var(--color-charcoal);
+  color: var(--color-cream);
+  transform: scale(0.95);
+}
+
+.carousel-nav:active {
+  transform: scale(0.85);
+}
+
+/* Mockup placeholder gradient backgrounds */
+.mockup-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+}
+
+.mockup-placeholder.gradient-1 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.mockup-placeholder.gradient-2 {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.mockup-placeholder.gradient-3 {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.mockup-placeholder.gradient-4 {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.mockup-placeholder.gradient-5 {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.mockup-placeholder.gradient-6 {
+  background: linear-gradient(135deg, var(--color-orange) 0%, #ff8a65 100%);
+}

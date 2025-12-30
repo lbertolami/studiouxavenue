@@ -42,6 +42,7 @@ const services = [
           Studio<span class="text-orange">.</span>UX Avenue
         </a>
         <div class="hidden md:flex items-center gap-8">
+          <a href="#work" class="text-sm font-medium text-gray hover:text-charcoal transition-colors orange-underline">Work</a>
           <a href="#services" class="text-sm font-medium text-gray hover:text-charcoal transition-colors orange-underline">Services</a>
           <a href="#contact" class="text-sm font-medium text-gray hover:text-charcoal transition-colors orange-underline">Contact</a>
           <a href="#contact" class="btn-primary text-sm">Start a Project</a>
@@ -57,6 +58,7 @@ const services = [
     <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-charcoal/5">
       <div class="px-6 py-4 space-y-4">
+        <a href="#work" class="block text-sm font-medium text-gray hover:text-charcoal">Work</a>
         <a href="#services" class="block text-sm font-medium text-gray hover:text-charcoal">Services</a>
         <a href="#contact" class="block text-sm font-medium text-gray hover:text-charcoal">Contact</a>
         <a href="#contact" class="btn-primary text-sm inline-block">Start a Project</a>
@@ -144,6 +146,141 @@ const services = [
           </svg>
         </a>
       </div>
+    </div>
+  </section>
+
+  <!-- Work/Mockups Section -->
+  <section id="work" class="py-24 lg:py-32 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <!-- Section header -->
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+        <div>
+          <span class="text-orange font-display font-semibold text-sm uppercase tracking-widest">Selected Work</span>
+          <h2 class="font-display font-extrabold text-4xl md:text-5xl lg:text-6xl text-charcoal mt-4 leading-tight">
+            Designs that<br/>
+            <span class="text-gray">speak volumes.</span>
+          </h2>
+        </div>
+        <!-- Navigation buttons -->
+        <div class="flex gap-3">
+          <button id="carousel-prev" class="carousel-nav" aria-label="Previous">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button id="carousel-next" class="carousel-nav" aria-label="Next">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel container - full width -->
+    <div id="mockup-carousel" class="mockup-carousel pl-6 lg:pl-12">
+      <!-- Mockup 1 - Laptop -->
+      <div class="mockup-item">
+        <div class="device-laptop">
+          <div class="screen">
+            <div class="mockup-placeholder gradient-1">
+              <span>Dashboard UI</span>
+            </div>
+          </div>
+          <div class="base"></div>
+        </div>
+        <p class="text-center mt-4 font-display font-semibold text-charcoal">FinTech Dashboard</p>
+        <p class="text-center text-sm text-gray">Web Application</p>
+      </div>
+
+      <!-- Mockup 2 - Phone -->
+      <div class="mockup-item">
+        <div class="device-phone">
+          <div class="frame">
+            <div class="notch"></div>
+            <div class="screen">
+              <div class="mockup-placeholder gradient-2">
+                <span>Mobile App</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="text-center mt-4 font-display font-semibold text-charcoal">Wellness App</p>
+        <p class="text-center text-sm text-gray">iOS & Android</p>
+      </div>
+
+      <!-- Mockup 3 - Laptop -->
+      <div class="mockup-item">
+        <div class="device-laptop">
+          <div class="screen">
+            <div class="mockup-placeholder gradient-3">
+              <span>E-commerce</span>
+            </div>
+          </div>
+          <div class="base"></div>
+        </div>
+        <p class="text-center mt-4 font-display font-semibold text-charcoal">Luxury E-commerce</p>
+        <p class="text-center text-sm text-gray">Shopify Design</p>
+      </div>
+
+      <!-- Mockup 4 - Phone -->
+      <div class="mockup-item">
+        <div class="device-phone">
+          <div class="frame">
+            <div class="notch"></div>
+            <div class="screen">
+              <div class="mockup-placeholder gradient-4">
+                <span>Food Delivery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="text-center mt-4 font-display font-semibold text-charcoal">Quick Bites</p>
+        <p class="text-center text-sm text-gray">Mobile App</p>
+      </div>
+
+      <!-- Mockup 5 - Laptop -->
+      <div class="mockup-item">
+        <div class="device-laptop">
+          <div class="screen">
+            <div class="mockup-placeholder gradient-5">
+              <span>SaaS Platform</span>
+            </div>
+          </div>
+          <div class="base"></div>
+        </div>
+        <p class="text-center mt-4 font-display font-semibold text-charcoal">Analytics Pro</p>
+        <p class="text-center text-sm text-gray">SaaS Dashboard</p>
+      </div>
+
+      <!-- Mockup 6 - Phone -->
+      <div class="mockup-item">
+        <div class="device-phone">
+          <div class="frame">
+            <div class="notch"></div>
+            <div class="screen">
+              <div class="mockup-placeholder gradient-6">
+                <span>Social App</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="text-center mt-4 font-display font-semibold text-charcoal">Connect</p>
+        <p class="text-center text-sm text-gray">Social Platform</p>
+      </div>
+
+      <!-- Spacer for last item visibility -->
+      <div class="w-6 lg:w-12 flex-shrink-0"></div>
+    </div>
+
+    <!-- View all work link -->
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 mt-12">
+      <a href="#contact" class="inline-flex items-center gap-2 font-display font-semibold text-charcoal hover:text-orange transition-colors group">
+        <span>Discuss Your Project</span>
+        <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
     </div>
   </section>
 
@@ -246,7 +383,7 @@ const services = [
         <!-- Right column - Form -->
         <div>
           <form
-            action="https://formspree.io/f/YOUR_FORM_ID"
+            action="https://formspree.io/f/mzdboqep"
             method="POST"
             class="space-y-6"
           >
@@ -384,5 +521,22 @@ const services = [
         mobileMenu.classList.add('hidden');
       });
     });
+
+    // Carousel navigation
+    const carousel = document.getElementById('mockup-carousel');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+
+    if (carousel && prevBtn && nextBtn) {
+      const scrollAmount = 400;
+
+      prevBtn.addEventListener('click', () => {
+        carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      });
+
+      nextBtn.addEventListener('click', () => {
+        carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      });
+    }
   </script>
 </Layout>
