@@ -49,22 +49,33 @@ const services = [
         </div>
         <!-- Mobile menu button -->
         <button id="mobile-menu-btn" class="md:hidden p-2" aria-label="Toggle menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <!-- Hamburger icon -->
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!-- Close icon (hidden by default) -->
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
     </div>
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-charcoal/5">
-      <div class="px-6 py-4 space-y-4">
-        <a href="#work" class="block text-sm font-medium text-gray hover:text-charcoal">Work</a>
-        <a href="#services" class="block text-sm font-medium text-gray hover:text-charcoal">Services</a>
-        <a href="#contact" class="block text-sm font-medium text-gray hover:text-charcoal">Contact</a>
-        <a href="#contact" class="btn-primary text-sm inline-block">Start a Project</a>
+  </nav>
+
+  <!-- Mobile menu overlay (starts below header) -->
+  <div id="mobile-menu" class="hidden md:hidden fixed top-20 left-0 right-0 bottom-0 z-40">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-charcoal/50 backdrop-blur-sm" id="mobile-menu-backdrop"></div>
+    <!-- Menu panel -->
+    <div class="relative bg-cream shadow-xl border-b border-charcoal/10">
+      <div class="px-6 py-6 space-y-4">
+        <a href="#work" class="block text-sm font-medium text-gray hover:text-charcoal transition-colors">Work</a>
+        <a href="#services" class="block text-sm font-medium text-gray hover:text-charcoal transition-colors">Services</a>
+        <a href="#contact" class="block text-sm font-medium text-gray hover:text-charcoal transition-colors">Contact</a>
+        <a href="#contact" class="btn-primary text-sm inline-block mt-2">Start a Project</a>
       </div>
     </div>
-  </nav>
+  </div>
 
   <!-- Hero Section -->
   <section class="min-h-screen flex items-center pt-20 relative overflow-hidden">
@@ -510,16 +521,30 @@ const services = [
   <script>
     const menuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+    const menuBackdrop = document.getElementById('mobile-menu-backdrop');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
 
-    menuBtn?.addEventListener('click', () => {
+    function toggleMenu() {
       mobileMenu?.classList.toggle('hidden');
-    });
+      iconOpen?.classList.toggle('hidden');
+      iconClose?.classList.toggle('hidden');
+    }
+
+    function closeMenu() {
+      mobileMenu?.classList.add('hidden');
+      iconOpen?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+    }
+
+    menuBtn?.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking backdrop
+    menuBackdrop?.addEventListener('click', closeMenu);
 
     // Close menu when clicking a link
     mobileMenu?.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
+      link.addEventListener('click', closeMenu);
     });
 
     // Carousel navigation
