@@ -42,6 +42,12 @@ public/
 - `.corner-accent` - Orange corner border decoration
 - `.price-tag` - Gradient text for pricing
 - `.orange-underline` - Animated underline on hover
+- `.mockup-carousel` - Horizontal scrolling container
+- `.mockup-item` - Individual carousel item with hover scale
+- `.device-laptop` - Laptop frame with screen and base
+- `.device-phone` - Phone frame with notch
+- `.carousel-nav` - Navigation button styling
+- `.mockup-placeholder.gradient-N` - Placeholder gradients (1-6)
 
 ## Commands
 
@@ -58,6 +64,7 @@ Replace `YOUR_FORM_ID` in `src/pages/index.astro` (line ~249) with your actual F
 
 ### Content Updates
 - **Services/Pricing**: Edit the `services` array in `src/pages/index.astro`
+- **Work/Mockups**: Replace placeholder gradients with `<img>` tags in the carousel section
 - **Stats**: Update numbers in the hero stats panel
 - **Contact email**: Update in the contact section
 - **Social links**: Update href values in footer
